@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# The Apple macOS system security provides a quarantine mechanism to prevent
+# malware from being installed on a system. When a user launches an app,
+# then the system shows "X is an application downloaded from the internet."
+# and prompts "Are you sure you want to open it?"
+#
+# This script deletes the quarantine attribute from the app.
+# This has the effect of removing the quarantine message.
+
+sudo xattr -d -r com.apple.quarantine "$@"
